@@ -3,28 +3,34 @@
 ## MVP
 
 ```
-As a user, I can view room availability, so that I can select a time thats available
+As a user, I can request to book a room, so that I can use it for my meeting.
 
-As a user, I can request to book a room, so that I can have a room for my meeting
+As a user, I can view room availability, so that I can select an available time slot.
 
-As a user, I can't book a room at an unavailable time, so that I don't clash with someone else's booking
+As a user, I can edit a booking, so that I can react to any changes in my work schedule.
 
-As a user, I would like a confirmation once the room is booked, so that I can be certain that the room is mine
+As a user, I can cancel a booking, so that someone else can use the room if I no longer need it.
+
+As a user, I would like a confirmation once the room is booked, so that I can be certain that the room is mine during the specified time slot.
+
+As a user, I can see onsite whether the room is currently available, so that I know whether I can book or not.
 ```
 ## Post-MVP
 
 ```
-As a user, I can cancel a booking, so that someone else can use the room if my meeting is cancelled
+As a user, I can't book a room at an unavailable time, so that I don't clash with someone else's booking.
 
-As a user, I can edit a booking, so that I can react to any meeting changes
+As a user, I can view availability in a calendar format, so that I can quickly pick/confirm a time slot for my booking.
+
+As a user, I want to be able to sign up and log in / log out, so that I can make a booking.
+
+...
 
 As a user, I can view my upcoming bookings, so that I know whats coming up
 
 As a user, I can receive a reminder before my meeting, so that I don't miss my meeting
 
 As a user, I can invite people to the meeting, so that I can ensure everyone knows where and when to meet
-
-As a user, I can view room availability on-site, so that I can see who is using the room
 
 As a user, I can see room capacity, so that I can make sure there's enough room for attendees
 
