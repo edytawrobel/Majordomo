@@ -1,21 +1,32 @@
-.container
-  .col-md-5
+= form_for @booking do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :description
+  = f.text_field :description
+  = f.label :start_time
+  #datetimepicker6.input-group.date
     .form-group
-      #datetimepicker6.input-group.date
-        %input.form-control{:type => "text"}/
-        %span.input-group-addon
-          %span.glyphicon.glyphicon-calendar
-  .col-md-5
+      %input#booking_start_time{:name => "booking[start_time]", :type => "text"}/
+      -# %input.form-control{:type => "text", :name => "start_time"}/
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
+  = f.label :end_time
+  #datetimepicker7.input-group.date
     .form-group
-      #datetimepicker7.input-group.date
-        %input.form-control{:type => "text"}/
-        %span.input-group-addon
-          %span.glyphicon.glyphicon-calendar
+      %input#booking_end_time{:name => "booking[end_time]", :type => "text"}/
+      -# %input.form-control{:type => "text", :name => "end_time"}/
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
+  = f.submit
+
+-# "<input type=\"text\" name=\"booking[description]\" id=\"booking_description\" />"
+
+
 :javascript
   $(function () {
       $('#datetimepicker6').datetimepicker();
       $('#datetimepicker7').datetimepicker({
-          useCurrent: false //Important! See issue #1075
+          useCurrent: false
       });
       $("#datetimepicker6").on("dp.change", function (e) {
           $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
