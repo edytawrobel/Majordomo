@@ -2,8 +2,8 @@
   - @bookings.each do |booking|
     %h2= booking.name
     %h4= booking.description
-    %h6= booking.start_time
-    %h6= booking.end_time
+    %h6= booking.start_time.strftime('%e %B %Y, %S:%M')
+    %h6= booking.end_time.strftime('%e %B %Y, %S:%M')
 - else
   %h1 No bookings yet
 
