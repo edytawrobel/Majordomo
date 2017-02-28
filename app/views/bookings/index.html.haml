@@ -1,0 +1,10 @@
+- if @bookings.any?
+  - @bookings.each do |booking|
+    %h2= booking.name
+    %h4= booking.description
+    %h6= booking.start_time
+    %h6= booking.end_time
+- else
+  %h1 No bookings yet
+
+%a(href='#') Create booking
