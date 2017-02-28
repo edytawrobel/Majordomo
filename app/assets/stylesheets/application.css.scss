@@ -40,6 +40,20 @@
   border: none;
 }
 
+.btn.btn-primary:active {
+  background-color: #ee4400;
+  border: none;
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
 i.fa{
   margin-left: 4px;
+}
+
+.container{
+  text-align: center;
 }
