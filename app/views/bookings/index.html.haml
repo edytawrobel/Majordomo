@@ -1,13 +1,18 @@
-- if @bookings.any?
-  - @bookings.each do |booking|
-    %h2= booking.name
-    %h4= booking.description
-    %h6= booking.start_time.strftime('%e %B %Y, %S:%M')
-    %h6= booking.end_time.strftime('%e %B %Y, %S:%M')
-- else
-  %h1 No bookings yet
-
-%a{:href => new_booking_path }
-  %button.btn.btn-primary
-    Create booking
-    %i.fa.fa-calendar{"aria-hidden" => "true"}
+.container
+  .row
+    .col-md-12
+      - if @bookings.any?
+        - @bookings.each do |booking|
+          %h2= booking.name
+          %h4= booking.description
+          %h6= booking.start_time.strftime('%e %B %Y, %S:%M')
+          %h6= booking.end_time.strftime('%e %B %Y, %S:%M')
+      - else
+        %h1 No bookings yet
+.container
+  .row
+    .col-md-12
+      %a{:href => new_booking_path }
+        %button.btn.btn-primary
+          Create booking
+          %i.fa.fa-calendar{"aria-hidden" => "true"}
