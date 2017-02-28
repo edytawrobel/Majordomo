@@ -1,32 +1,40 @@
-= form_for @booking do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :description
-  = f.text_field :description
-  = f.label :start_time
-  #datetimepicker6.input-group.date
-    .form-group
-      %input#booking_start_time{:name => "booking[start_time]", :type => "text"}/
-      %span.input-group-addon
-        %span.glyphicon.glyphicon-calendar
-  = f.label :end_time
-  #datetimepicker7.input-group.date
-    .form-group
-      %input#booking_end_time{:name => "booking[end_time]", :type => "text"}/
-      %span.input-group-addon
-        %span.glyphicon.glyphicon-calendar
-  = f.submit
+.container.booking-forms
+  .row
+    .col-md-12
+      %h2#form-title= 'Booking Details'
+  .row
+    .col-md-12
+      = form_for @booking do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true
+        .form-group
+          = f.label :description
+          = f.text_field :description, :class => 'form-control', placeholder: 'Description'
+        .form-group
+          = f.label :start_time
+          #datetimepicker6.input-group.date
+            %input#booking_start_time{:name => "booking[start_time]", :type => "text", :class => 'form-control', placeholder: 'Start time'}/
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+        .form-group
+          = f.label :end_time
+          #datetimepicker7.input-group.date
+            %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time'}/
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+        = f.submit 'Book', :class => 'btn btn-primary', :id => 'book-button'
 
-:javascript
-  $(function () {
-      $('#datetimepicker6').datetimepicker();
-      $('#datetimepicker7').datetimepicker({
-          useCurrent: false
-      });
-      $("#datetimepicker6").on("dp.change", function (e) {
-          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-      });
-      $("#datetimepicker7").on("dp.change", function (e) {
-          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-      });
-  });
+      :javascript
+        $(function () {
+            $('#datetimepicker6').datetimepicker();
+            $('#datetimepicker7').datetimepicker({
+                useCurrent: false
+            });
+            $("#datetimepicker6").on("dp.change", function (e) {
+                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker7").on("dp.change", function (e) {
+                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+            });
+        });

@@ -57,3 +57,42 @@ i.fa{
 .container{
   text-align: center;
 }
+
+.booking-forms {
+  background-color: white;
+  padding: 2em;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.form-control {
+  border: none;
+  border-bottom: #E8E8E8 solid 1.5px;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.form-control:focus {
+  border-bottom: #ff5500 solid 1.5px;
+  outline: none !important;
+  box-shadow: none;
+}
+
+form label {
+  color: white;
+}
+
+form {
+  padding: 0px 30px 0px 30px;
+}
+
+#book-button {
+  margin-top: 12px;
+}
+
+#form-title {
+  color: #ff5500;
+  align: left;
+  font-family: 'Josefin Slab';
+  font-size: 3em;
+}
