@@ -25,19 +25,18 @@ feature 'Bookings' do
 
   context 'creating a new booking' do
     scenario 'should display content of the booking' do
-      visit bookings_path
-      click_link 'Create booking'
+      visit new_booking_path
       fill_in 'Name', with: 'workshop'
       fill_in 'Description', with: 'it is hard not to fall asleep'
-      select('28', from: 'Day')
-      select('2', from: 'Month')
-      select('2017', from: 'Year')
-      select('09', from: 'StartHour')
-      select('00', from: 'StartMinute')
-      select('11', from: 'EndHour')
-      select('00', from: 'EndMinute')
+      fill_in 'booking_start_time', with: '2017-01-01 17:19:00'
+      fill_in 'booking_end_time', with: '2017-01-01 17:21:00'
+      click_button 'Create Booking'
+
+      expect(current_path).to eq bookings_path
       expect(page).to have_content 'workshop'
       expect(page).to have_content 'it is hard not to fall asleep'
+      expect(page).to have_content '1 January 2017, 00:19'
+      expect(page).to have_content '1 January 2017, 00:21'
     end
   end
 end
