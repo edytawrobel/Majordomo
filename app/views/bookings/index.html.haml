@@ -7,4 +7,7 @@
 - else
   %h1 No bookings yet
 
-%a(href=new_booking_path) Create booking
+%a{:href => new_bookings_path }
+  %button.btn.btn-primary
+    Create booking
+    %i.fa.fa-calendar{"aria-hidden" => "true"}

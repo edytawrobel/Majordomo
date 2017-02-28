@@ -14,3 +14,46 @@
  *= require_tree .
  *= require_self
  */
+ // @import "bootstrap-sprockets";
+ // @import "bootstrap";
+
+ .navbar {
+  background: white;
+ }
+
+ .navbar-brand {
+  font-family: 'Josefin Slab';
+  color: #ff5500 !important;
+  font-weight: bold;
+  font-size: 2em;
+ }
+
+ body {
+  font-family: 'Raleway';
+  color: black;
+  font-weight: lighter;
+  background-color: #F6F8F8 ;
+ }
+
+.btn.btn-primary {
+  background-color: #ff5500;
+  border: none;
+}
+
+.btn.btn-primary:active {
+  background-color: #ee4400;
+  border: none;
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+i.fa{
+  margin-left: 4px;
+}
+
+.container{
+  text-align: center;
+}
