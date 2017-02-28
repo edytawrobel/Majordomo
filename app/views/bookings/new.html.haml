@@ -3,11 +3,12 @@
   = f.text_field :name
   = f.label :description
   = f.text_field :description
-  - p f.text_field :description
   = f.label :start_time
   #datetimepicker6.input-group.date
     .form-group
-      %input.form-control{:type => "text", :name => "start_time"}/
+      %input#booking_start_time{:name => "booking[start_time]", :type => "text"}/
+      -# %input.form-control{:type => "text", :name => "start_time"}/
+      %input.
       %span.input-group-addon
         %span.glyphicon.glyphicon-calendar
   = f.label :end_time
@@ -18,6 +19,7 @@
         %span.glyphicon.glyphicon-calendar
   = f.submit
 
+"<input type=\"text\" name=\"booking[description]\" id=\"booking_description\" />"
 
 
 :javascript
