@@ -35,8 +35,8 @@ feature 'Bookings' do
       expect(current_path).to eq bookings_path
       expect(page).to have_content 'workshop'
       expect(page).to have_content 'it is hard not to fall asleep'
-      expect(page).to have_content '1 January 2017, 00:19'
-      expect(page).to have_content '1 January 2017, 00:21'
+      expect(page).to have_content '1 January 2017, 17:19'
+      expect(page).to have_content '1 January 2017, 17:21'
     end
   end
 end
