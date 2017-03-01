@@ -25,16 +25,19 @@
               %span.glyphicon.glyphicon-calendar
         = f.submit 'Book', :class => 'btn btn-primary', :id => 'book-button'
 
-      :javascript
-        $(function () {
-            $('#datetimepicker6').datetimepicker();
-            $('#datetimepicker7').datetimepicker({
-                useCurrent: false
-            });
-            $("#datetimepicker6").on("dp.change", function (e) {
-                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-            });
-            $("#datetimepicker7").on("dp.change", function (e) {
-                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-            });
-        });
+:javascript
+  $(function () {
+      $('#datetimepicker6').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm'
+      });
+      $('#datetimepicker7').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm',
+          useCurrent: false
+      });
+      $("#datetimepicker6").on("dp.change", function (e) {
+          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+      });
+      $("#datetimepicker7").on("dp.change", function (e) {
+          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+      });
+  });
