@@ -1,13 +1,13 @@
 .container.booking-forms
   .row
     .col-md-12
-      %h2#form-title= 'Booking Details'
+      %h2#form-title= 'New Booking'
   .row
     = form_for @booking do |f|
       .col-md-12
         .form-group
           = f.label :name
-          = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true
+          = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true, :required => ""
         .form-group
           = f.label :description
           = f.text_field :description, :class => 'form-control', placeholder: 'Description'
@@ -30,11 +30,15 @@
         .form-group
           = f.label :start_time
           #datetimepicker6.input-group.date
-            %input#booking_start_time{:name => "booking[start_time]", :type => "text", :class => 'form-control', placeholder: 'Start time'}/
+            %input#booking_start_time{:name => "booking[start_time]", :type => "text", :class => 'form-control', placeholder: 'Start time', :required => ""}/
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
         .form-group
           = f.label :end_time
           #datetimepicker7.input-group.date
-            %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time'}/
+            %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time', :required => ""}/
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
         = f.submit 'Book', :class => 'btn btn-primary', :id => 'book-button'
 
 :javascript
