@@ -3,6 +3,6 @@
 %h6= @booking.start_time.strftime('%e %B %Y, %H:%M')
 %h6= @booking.end_time.strftime('%e %B %Y, %H:%M')
 
-= link_to 'Edit', edit_booking_path
-| 
+= link_to "Edit", edit_booking_path
+|
 = link_to 'Cancel', booking_path, method: :delete

@@ -1,7 +1,7 @@
 .container.booking-forms
   .row
     .col-md-12
-      %h2#form-title= 'New Booking'
+      %h2#form-title= 'Edit Booking'
   .row
     .col-md-12
       = form_for @booking do |f|
@@ -23,7 +23,7 @@
             %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time'}/
             %span.input-group-addon
               %span.glyphicon.glyphicon-calendar
-        = f.submit 'Book', :class => 'btn btn-primary', :id => 'book-button'
+        = f.submit 'Update', :class => 'btn btn-primary', :id => 'book-button'
 
 :javascript
   $(function () {

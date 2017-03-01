@@ -48,6 +48,37 @@ feature 'Bookings' do
       expect(page).to have_content 'Single booking'
       expect(page).to have_content 'Has a long description here'
       expect(page).to have_link 'Edit'
+      expect(page).to have_link 'Cancel'
+    end
+  end
+
+  context 'editing a booking' do
+    let!(:booking){ Booking.create(name: 'Single booking', description: 'Has a long description here', start_time: DateTime.now, end_time: DateTime.now+300) }
+
+    scenario 'should update booking info' do
+      visit booking_path(booking)
+      click_link 'Edit'
+      fill_in 'Description', with: 'Has a much shorter description now'
+      fill_in 'booking_start_time', with: '2017-01-01 16:00:00'
+      fill_in 'booking_end_time', with: '2017-01-01 16:10:00'
+      click_button 'Update'
+      expect(current_path).to eq bookings_path
+      expect(page).to have_content 'Booking updated!'
+      expect(page).to have_content 'Has a much shorter description now'
+      expect(page).to have_content '1 January 2017, 16:00'
+    end
+  end
+
+  context 'cancelling a booking' do
+    let!(:booking){ Booking.create(name: 'Single booking', description: 'Has a long description here', start_time: '2017-01-01 16:00:00', end_time: '2017-01-01 16:10:00') }
+
+    scenario 'should destroy that booking' do
+      visit booking_path(booking)
+      click_link 'Cancel'
+      expect(current_path).to eq bookings_path
+      expect(page).to have_content 'Booking cancelled!'
+      expect(page).not_to have_content 'Single booking'
+      expect(page).not_to have_content '1 January 2017, 16:00'
     end
   end
 end
