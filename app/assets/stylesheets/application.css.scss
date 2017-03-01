@@ -80,6 +80,9 @@ i.fa{
 
 form label {
   color: white;
+  font-size: 5px;
+  margin: 0px;
+  padding: 0px;
 }
 
 form {
@@ -87,7 +90,7 @@ form {
 }
 
 #book-button {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 #form-title {
@@ -95,4 +98,5 @@ form {
   align: left;
   font-family: 'Josefin Slab';
   font-size: 3em;
+  margin-top: 10px;
 }
