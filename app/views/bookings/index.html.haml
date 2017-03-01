@@ -3,7 +3,7 @@
     .col-md-12
       - if @bookings.any?
         - @bookings.each do |booking|
-          %h2= booking.name
+          %h2= link_to booking.name, booking_path(booking)
           %h4= booking.description
           %h6= booking.start_time.strftime('%e %B %Y, %H:%M')
           %h6= booking.end_time.strftime('%e %B %Y, %H:%M')
