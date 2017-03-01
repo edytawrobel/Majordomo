@@ -36,6 +36,12 @@ feature 'Bookings' do
       expect(page).to have_content '1 January 2017, 17:19'
       expect(page).to have_content '1 January 2017, 17:21'
     end
+
+    scenario 'should display validations' do
+      visit new_booking_path
+      expect(page).to have_xpath("//input[@required='required']")
+    end
+
   end
 
   context 'viewing a single booking' do
