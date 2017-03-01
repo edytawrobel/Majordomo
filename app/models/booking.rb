@@ -3,6 +3,15 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true, allow_nil: false
   validates :end_time, presence: true, allow_nil: false
 
+  validate :no_overlapping_bookings
+
+  def no_overlapping_bookings
+    overlaps = Booking.where('start_time <= ? AND end_time >= ?', end_time, start_time)
+    return if overlaps.empty?
+    return if overlaps.count == 1 && overlaps.first.id == id
+    errors.add(:start_time, "This booking overlaps others")
+  end
+
   def self.status?
     status = false
     Booking.all.each do |booking|
