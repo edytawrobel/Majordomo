@@ -1,29 +1,31 @@
-.container.booking-forms
-  .row
-    .col-md-12
-      %h2#form-title= 'Edit Booking'
-  .row
-    .col-md-12
-      = form_for @booking do |f|
-        .form-group
-          = f.label :name
-          = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true
-        .form-group
-          = f.label :description
-          = f.text_field :description, :class => 'form-control', placeholder: 'Description'
-        .form-group
-          = f.label :start_time
-          #datetimepicker6.input-group.date
-            %input#booking_start_time{:name => "booking[start_time]", :type => "text", :class => 'form-control', placeholder: 'Start time'}/
-            %span.input-group-addon
-              %span.glyphicon.glyphicon-calendar
-        .form-group
-          = f.label :end_time
-          #datetimepicker7.input-group.date
-            %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time'}/
-            %span.input-group-addon
-              %span.glyphicon.glyphicon-calendar
-        = f.submit 'Update', :class => 'btn btn-primary', :id => 'book-button'
+%form{"data-toggle" => "validator", :role => "form"}
+
+  .container.booking-forms
+    .row
+      .col-md-12
+        %h2#form-title= 'Edit Booking'
+    .row
+      .col-md-12
+        = form_for @booking do |f|
+          .form-group
+            = f.label :name
+            = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true, :required => ""
+          .form-group
+            = f.label :description
+            = f.text_field :description, :class => 'form-control', placeholder: 'Description'
+          .form-group
+            = f.label :start_time
+            #datetimepicker6.input-group.date
+              %input#booking_start_time{:name => "booking[start_time]", :type => "text", :class => 'form-control', placeholder: 'Start time', :required => ""}/
+              %span.input-group-addon
+                %span.glyphicon.glyphicon-calendar
+          .form-group
+            = f.label :end_time
+            #datetimepicker7.input-group.date
+              %input#booking_end_time{:name => "booking[end_time]", :type => "text", :class => 'form-control', placeholder: 'End time', :required => ""}/
+              %span.input-group-addon
+                %span.glyphicon.glyphicon-calendar
+          = f.submit 'Update', :class => 'btn btn-primary', :id => 'book-button'
 
 :javascript
   $(function () {
