@@ -3,14 +3,30 @@
     .col-md-12
       %h2#form-title= 'New Booking'
   .row
-    .col-md-12
-      = form_for @booking do |f|
+    = form_for @booking do |f|
+      .col-md-12
         .form-group
           = f.label :name
           = f.text_field :name, :class => 'form-control', placeholder: 'Name of booking', autofocus: true, :required => ""
         .form-group
           = f.label :description
           = f.text_field :description, :class => 'form-control', placeholder: 'Description'
+        .form-group
+          = f.label :date
+          #datetimepicker5.input-group.date
+            %input#date{:name => "date", :type => "text", :class => 'form-control', placeholder: 'Date'}/
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+        .form-group
+          %div.start-time-picker
+            %h5='Start time'
+            #datetimepicker3
+          %div.end-time-picker
+            %h5='End time'
+            #datetimepicker4
+      .col-md-12
+        .form-group
+          = f.label :end_time
         .form-group
           = f.label :start_time
           #datetimepicker6.input-group.date
@@ -27,6 +43,26 @@
 
 :javascript
   $(function () {
+      $('#datetimepicker5').datetimepicker({
+          format: 'YYYY-MM-DD'
+      });
+      $('#datetimepicker3').datetimepicker({
+          format: 'HH:mm',
+          inline: true,
+          stepping: 5
+      });
+      $('#datetimepicker4').datetimepicker({
+          format: 'HH:mm',
+          inline: true,
+          useCurrent: false,
+          stepping: 5
+      });
+        $("#datetimepicker3").on("dp.change", function (e) {
+            $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker4").on("dp.change", function (e) {
+            $('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
+        });
       $('#datetimepicker6').datetimepicker({
           format: 'YYYY-MM-DD HH:mm'
       });
@@ -39,5 +75,17 @@
       });
       $("#datetimepicker7").on("dp.change", function (e) {
           $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+      });
+
+      $('#datetimepicker3').on('dp.change', function() {
+        $('#booking_start_time').val(
+          $('#date').val() + ' ' + $('#datetimepicker3 .timepicker-hour').html() + ':' + $('#datetimepicker3 .timepicker-minute').html()
+          );
+      });
+
+      $('#datetimepicker4').on('dp.change', function() {
+        $('#booking_end_time').val(
+          $('#date').val() + ' ' + $('#datetimepicker4 .timepicker-hour').html() + ':' + $('#datetimepicker4 .timepicker-minute').html()
+          );
       });
   });

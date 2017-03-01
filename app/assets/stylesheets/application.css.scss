@@ -17,13 +17,20 @@
  // @import "bootstrap-sprockets";
  // @import "bootstrap";
 
+ $primary-color: #ff5500;
+ $secondary-color: #E8E8E8;
+
  .navbar {
   background: white;
+  border-radius: none !important;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
  }
 
  .navbar-brand {
   font-family: 'Josefin Slab';
-  color: #ff5500 !important;
+  color: $primary-color !important;
   font-weight: bold;
   font-size: 2em;
  }
@@ -36,7 +43,7 @@
  }
 
 .btn.btn-primary {
-  background-color: #ff5500;
+  background-color: $primary-color;
   border: none;
 }
 
@@ -67,13 +74,13 @@ i.fa{
 
 .form-control {
   border: none;
-  border-bottom: #E8E8E8 solid 1.5px;
+  border-bottom: $secondary-color solid 1.5px;
   box-shadow: none;
   border-radius: 0px;
 }
 
 .form-control:focus {
-  border-bottom: #ff5500 solid 1.5px;
+  border-bottom: $primary-color solid 1.5px;
   outline: none !important;
   box-shadow: none;
 }
@@ -83,6 +90,7 @@ form label {
   font-size: 5px;
   margin: 0px;
   padding: 0px;
+  display:none;
 }
 
 form {
@@ -94,9 +102,106 @@ form {
 }
 
 #form-title {
-  color: #ff5500;
+  color: $primary-color;
   align: left;
   font-family: 'Josefin Slab';
   font-size: 3em;
   margin-top: 10px;
+}
+
+span.input-group-addon {
+  background-color: white;
+  color: $primary-color;
+  border: none;
+  border-bottom: $secondary-color solid 1.5px !important;
+  border-radius: 0px;
+}
+
+span.input-group-addon:active{
+  border-bottom: $primary-color solid 1.5px;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.timepicker{
+ width: 20%;
+}
+
+// #time-container{
+//   .ui-datepicker {
+//     width: 50%;
+//     padding: 0;
+//   }
+//   .ui-widget {
+//     font-size: 0.9em;
+//   }
+//   .ui-datepicker table {
+//     font-size: 0.7em;
+//   }
+// }
+ul li{
+  text-align: center;
+}
+
+.usetwentyfour{
+  display: inline-block;
+}
+#datetimepicker4{
+  display: inline-block;
+}
+#datetimepicker3{
+  display: inline-block;
+}
+
+#datetimepicker6 {
+  display:none;
+}
+
+#datetimepicker7 {
+  display:none;
+}
+
+tr td {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+td a {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+h5 {
+  margin: 0px !important;
+  padding: 0px !important;
+  align: center;
+}
+
+span.glyphicon-chevron-up {
+  color:$primary-color;
+}
+
+span.glyphicon-chevron-down {
+  color:$primary-color;
+}
+
+.start-time-picker {
+  // float: left;
+  // margin-left: 2em;
+  align-items: center;
+  display: inline-block;
+}
+
+.end-time-picker {
+  // float: right;
+  // margin-left: 2em;
+  align-items: center;
+  display: inline-block;
+
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px !important;
+  }
 }
