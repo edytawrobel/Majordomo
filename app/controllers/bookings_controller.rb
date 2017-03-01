@@ -34,6 +34,10 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def status
+    @status = Booking.status?
+  end
+
   private
 
   def booking_params
