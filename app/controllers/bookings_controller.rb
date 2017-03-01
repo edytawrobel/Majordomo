@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = Booking.all
   end
@@ -8,8 +9,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
-    redirect_to bookings_path
+    @booking = Booking.new(booking_params)
+    if @booking.save
+      flash[:success] = 'Booked!'
+      redirect_to bookings_path
+    else
+      flash[:alert] = "This booking overlaps others"
+      render 'new'
+    end
   end
 
   def show
