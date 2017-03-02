@@ -63,9 +63,10 @@
             $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
         });
         $("#datetimepicker3").on("dp.change", function (e) {
+          if($('#datetimepicker4').data("DateTimePicker").date() < e.date.add(5, 'minutes'))
             $('#datetimepicker4').data("DateTimePicker").date(e.date.add(5, 'minutes'));
         });
-        
+
       $('#datetimepicker6').datetimepicker({
           format: 'YYYY-MM-DD HH:mm'
       });
