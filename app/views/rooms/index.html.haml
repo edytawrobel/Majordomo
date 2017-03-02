@@ -4,6 +4,15 @@
       - if @rooms.any?
         - @rooms.each do |room|
           %h2= link_to room.name, room_path(room)
+          = week_calendar events: room.bookings do |date, bookings|
+            = date
+            - bookings.each do |booking|
+              %div
+                = link_to booking.name, room_booking_path(room, booking)
+                %br
+                = booking.start_time.strftime('%H:%M')
+                = ' - '
+                = booking.end_time.strftime('%H:%M')
       - else
         %h1 No rooms yet
 .container
