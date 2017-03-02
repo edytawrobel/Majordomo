@@ -14,18 +14,15 @@ feature 'Bookings' do
 
     scenario 'should display content of the booking' do
       visit room_path(room)
-      click_link 'Book'
+      click_link 'Create booking'
       fill_in 'Name', with: 'Workshop'
       fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: '2017-01-01 17:19:00'
-      fill_in 'booking_end_time', with: '2017-01-01 17:21:00'
+      fill_in 'booking_start_time', with: DateTime.now
+      fill_in 'booking_end_time', with: (DateTime.now + 300)
       click_button 'Book'
 
       expect(current_path).to eq room_path(room)
       expect(page).to have_content 'Workshop'
-      expect(page).to have_content 'it is hard not to fall asleep'
-      expect(page).to have_content '1 January 2017, 17:19'
-      expect(page).to have_content '1 January 2017, 17:21'
     end
 
     scenario 'should display validations' do
@@ -39,13 +36,14 @@ feature 'Bookings' do
 
     scenario 'should display booking info and options' do
       visit room_path(room)
-      click_link 'Book'
+      click_link 'Create booking'
       fill_in 'Name', with: 'Workshop'
       fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: '2017-01-01 17:19:00'
-      fill_in 'booking_end_time', with: '2017-01-01 17:21:00'
+      fill_in 'booking_start_time', with: DateTime.now
+      fill_in 'booking_end_time', with: (DateTime.now + 5)
       click_button 'Book'
       expect(current_path).to eq room_path(room)
+      save_and_open_page
       click_link 'Workshop'
       expect(page).to have_content 'Workshop'
       expect(page).to have_content 'it is hard not to fall asleep'
