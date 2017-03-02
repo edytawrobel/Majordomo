@@ -1,6 +1,6 @@
-!!!
 %html
   %head
+    %meta{:content => "60", "http-equiv" => "refresh"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Majordomo
     %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
@@ -10,10 +10,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
-    = render 'shared/navigation'
-    .container
-      -flash.each do |name, msg|
-        = content_tag :div, msg, class: [:alert, alert_for(name)]
-      = yield
+    = yield
     %script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}

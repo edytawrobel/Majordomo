@@ -43,6 +43,7 @@ class BookingsController < ApplicationController
 
   def status
     @status = Booking.status?
+    render :layout => "status_layout"
   end
 
   private
