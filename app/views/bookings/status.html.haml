@@ -1,7 +1,8 @@
-%head
-  %meta{:content => "60", "http-equiv" => "refresh"}/
 - if @status == true
-  = 'Busy'
-  / Front-end team, use some nice, highly-visible styling for both statuses.
+  %div#in-use
+    = 'Room in use'
 - else
-  = 'Free'
+  %div#available
+    = 'Room'
+    %br
+    = 'available'

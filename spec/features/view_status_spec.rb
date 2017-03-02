@@ -13,7 +13,7 @@ feature 'View status' do
       fill_in 'booking_end_time', with: (DateTime.now + 60)
       click_button 'Book'
       visit status_room_bookings_path(room)
-      expect(page).to have_content 'Busy'
+      expect(page).to have_content 'Room in use'
     end
   end
 
@@ -28,7 +28,7 @@ feature 'View status' do
       fill_in 'booking_end_time', with: ( DateTime.now - 300)
       click_button 'Book'
       visit status_room_bookings_path(room)
-      expect(page).to have_content 'Free'
+      expect(page).to have_content 'Room available'
     end
   end
 end
