@@ -1,4 +1,4 @@
-# Majordomo
+# Majordomo ![Travis CI](https://travis-ci.org/sliute/majordomo.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/sliute/majordomo/badge.svg?branch=master)](https://coveralls.io/github/sliute/majordomo?branch=master)
 
 The room booking and occupancy web app.
 
