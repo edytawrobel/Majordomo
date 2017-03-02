@@ -29,6 +29,22 @@ feature 'Rooms' do
       expect(current_path).to eq rooms_path
       expect(page).to have_content 'Joy Room'
     end
+
+    scenario 'should display validations' do
+      visit new_room_path
+      expect(page).to have_xpath("//input[@required='required']")
+    end
+
+    scenario 'should fail when duplicate name provided' do
+      visit new_room_path
+      fill_in 'Name', with: 'Joy Room'
+      click_button 'Add'
+      visit new_room_path
+      fill_in 'Name', with: 'Joy Room'
+      click_button 'Add'
+      expect(current_path).to eq new_room_path
+      expect(page).to have_content 'This room already exists!'
+    end
   end
 
   context 'viewing a single room' do

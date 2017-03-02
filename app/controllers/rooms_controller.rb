@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+
   def index
     @rooms = Room.all
   end
@@ -13,7 +14,9 @@ class RoomsController < ApplicationController
       flash[:success] = 'Added!'
       redirect_to rooms_path
     else
-      render 'new'
+      flash[:alert] = "This room already exists!"
+      # render 'new'
+      redirect_to new_room_path
     end
   end
 
