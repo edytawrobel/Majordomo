@@ -13,22 +13,30 @@ feature 'Bookings' do
 
   context 'can be created' do
     let!(:room){ Room.create(name: 'Joy Room') }
+    let!(:room_two){ Room.create(name: 'Living Room') }
 
     scenario 'via a form, then users can see the current week\'s calendar (with their booking, if in that week),' do
-      visit room_path(room)
-      click_link 'Create booking'
-      fill_in 'Name', with: 'Workshop'
-      fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: DateTime.now
-      fill_in 'booking_end_time', with: (DateTime.now + 5.minutes)
-      click_button 'Book'
-
+      create_booking_one
       expect(current_path).to eq room_path(room)
       expect(page).not_to have_content 'No bookings yet!'
       expect(page).to have_content 'Workshop'
     end
 
-    scenario 'and the form has the relevant field validations.' do
+    scenario 'UNLESS THEY OVERLAP (for a given room),' do
+      create_booking_one
+      create_booking_two
+      expect(current_path).to eq new_room_booking_path(room)
+      expect(page).to have_content 'This booking overlaps others'
+    end
+
+    scenario 'but it is ok for them to overlap if they are in DIFFERENT rooms,' do
+      create_booking_one
+      create_booking_three
+      expect(current_path).to eq room_path(room_two)
+      expect(page).to have_content 'Another workshop'
+    end
+
+    scenario 'and the form has the relevant field validations' do
       visit new_room_booking_path(room)
       expect(page).to have_xpath("//input[@required='required']")
     end
@@ -38,13 +46,7 @@ feature 'Bookings' do
     let!(:room){ Room.create(name: 'Joy Room') }
 
     scenario 'that display specific information and options' do
-      visit room_path(room)
-      click_link 'Create booking'
-      fill_in 'Name', with: 'Workshop'
-      fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: DateTime.now
-      fill_in 'booking_end_time', with: (DateTime.now + 5.minutes)
-      click_button 'Book'
+      create_booking_one
       expect(current_path).to eq room_path(room)
       click_link 'Workshop'
       expect(page).to have_content 'Workshop'
@@ -60,21 +62,10 @@ feature 'Bookings' do
     let!(:room){ Room.create(name: 'Joy Room') }
 
     scenario 'via a form' do
-      visit room_path(room)
-      click_link 'Create booking'
-      fill_in 'Name', with: 'Workshop'
-      fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: DateTime.now
-      fill_in 'booking_end_time', with: (DateTime.now + 5.minutes)
-      click_button 'Book'
+      create_booking_one
       expect(current_path).to eq room_path(room)
       click_link 'Workshop'
-      click_link 'Edit'
-      fill_in 'Name', with: 'Much tinier workshop'
-      fill_in 'Description', with: 'so no sleeping'
-      fill_in 'booking_start_time', with: (DateTime.now + 10.minutes)
-      fill_in 'booking_end_time', with: (DateTime.now + 15.minutes)
-      click_button 'Update'
+      edit_booking_one
       expect(current_path).to eq room_path(room)
       expect(page).to have_content 'Booking updated!'
       expect(page).to have_content 'Much tinier workshop'
@@ -86,13 +77,7 @@ feature 'Bookings' do
     let!(:room){ Room.create(name: 'Joy Room') }
 
     scenario 'via a link' do
-      visit room_path(room)
-      click_link 'Create booking'
-      fill_in 'Name', with: 'Workshop'
-      fill_in 'Description', with: 'it is hard not to fall asleep'
-      fill_in 'booking_start_time', with: DateTime.now
-      fill_in 'booking_end_time', with: (DateTime.now + 5.minutes)
-      click_button 'Book'
+      create_booking_one
       expect(current_path).to eq room_path(room)
       click_link 'Workshop'
       click_link 'Cancel'

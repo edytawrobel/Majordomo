@@ -11,20 +11,14 @@ feature 'Rooms' do
 
   context 'can be created' do
     scenario 'via a form, then users can see all existing rooms' do
-      visit new_room_path
-      fill_in 'Name', with: 'Joy Room'
-      click_button 'Add'
+      create_room_one
       expect(current_path).to eq rooms_path
       expect(page).to have_content 'Joy Room'
     end
 
-    scenario 'unless a room name is duplicated' do
-      visit new_room_path
-      fill_in 'Name', with: 'Joy Room'
-      click_button 'Add'
-      visit new_room_path
-      fill_in 'Name', with: 'Joy Room'
-      click_button 'Add'
+    scenario 'UNLESS THEY DUPLICATE an existing room name,' do
+      create_room_one
+      create_room_one
       expect(current_path).to eq new_room_path
       expect(page).to have_content 'This room already exists!'
     end

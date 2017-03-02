@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Users can view a room status' do
   context 'and when a booking is in progress' do
     let!(:room){ Room.create(name: 'Joy Room') }
-    # let!(:booking){ Booking.create(name: 'First booking', description: 'Has a long description here', start_time: DateTime.now-300, end_time: DateTime.now+300, room_id: 1) }
+    # let!(:booking){ Booking.create(name: 'First booking', description: 'Has a long description here', start_time:(DateTime.now - 5), end_time: (DateTime.now + 5.minutes), room_id: 1) }
     scenario 'the status is "in use"' do
       visit room_path(room)
       click_link 'Create booking'
