@@ -197,7 +197,26 @@ span.glyphicon-chevron-down {
   // margin-left: 2em;
   align-items: center;
   display: inline-block;
+}
 
+#in-use {
+  background-color: $primary-color;
+  color: white;
+  font-size: 9em;
+  height: 100%;
+  padding-top: 15%;
+  padding-left: 0.5em;
+  font-weight: 500;
+}
+
+#available {
+  background-color: #00da9d;
+  color: white;
+  font-size: 9em;
+  height: 100%;
+  padding-top: 15%;
+  padding-left: 0.5em;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
