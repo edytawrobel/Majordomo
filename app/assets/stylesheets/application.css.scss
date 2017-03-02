@@ -117,6 +117,14 @@ form {
   margin-top: 10px;
 }
 
+#calendar-title {
+  color: $primary-color;
+  align: left;
+  font-family: 'Josefin Slab';
+  font-size: 3em;
+  margin-top: 10px;
+}
+
 span.input-group-addon {
   background-color: white;
   color: $primary-color;
@@ -225,6 +233,13 @@ span.glyphicon-chevron-down {
   padding-top: 15%;
   padding-left: 0.5em;
   font-weight: 500;
+}
+
+.table.table-striped {
+  table-layout: fixed;
+  th {
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) {
