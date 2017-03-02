@@ -1,0 +1,13 @@
+%form{"data-toggle" => "validator", :role => "form"}
+
+.container.booking-forms
+  .row
+    .col-md-12
+      %h2#form-title= 'New Room'
+  .row
+    = form_for @room do |f|
+      .col-md-12
+        .form-group
+          = f.label :name
+          = f.text_field :name, :class => 'form-control', placeholder: 'Name of room', autofocus: true, :required => ""
+          = f.submit 'Add', :class => 'btn btn-primary', :id => 'book-button'

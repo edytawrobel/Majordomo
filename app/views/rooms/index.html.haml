@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-12
+      - if @rooms.any?
+        - @rooms.each do |room|
+          %h2= link_to room.name, room_path(room)
+      - else
+        %h1 No rooms yet
+.container
+  .row
+    .col-md-12
+      %a{:href => new_room_path }
+        %button.btn.btn-primary
+          Add room
+          %i.fa.fa-calendar{"aria-hidden" => "true"}

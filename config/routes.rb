@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       get 'status'
     end
   end
+
+  resources :rooms
 end
