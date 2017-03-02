@@ -29,6 +29,22 @@ feature 'Rooms' do
       expect(current_path).to eq rooms_path
       expect(page).to have_content 'Joy Room'
     end
+
+    scenario 'should display validations' do
+      visit new_room_path
+      expect(page).to have_xpath("//input[@required='required']")
+    end
+
+    scenario 'should fail when duplicate name provided' do
+      visit new_room_path
+      fill_in 'Name', with: 'Joy Room'
+      click_button 'Add'
+      visit new_room_path
+      fill_in 'Name', with: 'Joy Room'
+      click_button 'Add'
+      expect(current_path).to eq new_room_path
+      expect(page).to have_content 'This room already exists!'
+    end
   end
 
   context 'viewing a single room' do
@@ -39,6 +55,32 @@ feature 'Rooms' do
       click_link 'Living Room'
       expect(current_path).to eq room_path(room)
       expect(page).to have_content 'Living Room'
+    end
+  end
+
+  context 'editing a room' do
+    let!(:room){ Room.create(name: 'Living Room') }
+
+    scenario 'should update booking info' do
+      visit room_path(room)
+      click_link 'Edit'
+      fill_in 'Name', with: 'Meeting Room 1'
+      click_button 'Update'
+      expect(current_path).to eq rooms_path
+      expect(page).to have_content 'Room updated!'
+      expect(page).to have_content 'Meeting Room 1'
+    end
+  end
+
+  context 'deleting a room' do
+    let!(:room){ Room.create(name: 'Living Room') }
+
+    scenario 'should destroy that room' do
+      visit room_path(room)
+      click_link 'Delete'
+      expect(current_path).to eq rooms_path
+      expect(page).to have_content 'Room deleted!'
+      expect(page).not_to have_content 'Living Room'
     end
   end
 end

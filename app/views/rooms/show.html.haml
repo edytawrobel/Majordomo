@@ -1,5 +1,19 @@
 %h2= @room.name
 
+= link_to 'Book', new_room_booking_path(@room)
+|
 = link_to 'Edit', edit_room_path
 |
-= link_to 'Delete', room_path, method: :delete
+= link_to 'Delete room', room_path, method: :delete
+
+.container
+  .row
+    .col-md-12
+      - if @room.bookings.any?
+        - @room.bookings.each do |booking|
+          %h2= link_to booking.name, room_booking_path(@room, booking)
+          %h4= booking.description
+          %h6= booking.start_time.strftime('%e %B %Y, %H:%M')
+          %h6= booking.end_time.strftime('%e %B %Y, %H:%M')
+      - else
+        %h1 No bookings yet

@@ -10,6 +10,8 @@ gem 'haml-rails'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'simple_calendar'
+gem 'validates_overlap'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
@@ -45,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'shoulda'
 end
 
 group :development do

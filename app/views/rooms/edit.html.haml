@@ -3,11 +3,11 @@
 .container.booking-forms
   .row
     .col-md-12
-      %h2#form-title= 'New Room'
+      %h2#form-title= 'Edit Room'
   .row
     = form_for @room do |f|
       .col-md-12
         .form-group
           = f.label :name
           = f.text_field :name, :class => 'form-control', placeholder: 'Name of room', autofocus: true, :required => ""
-          = f.submit 'Add', :class => 'btn btn-primary', :id => 'add-button'
+          = f.submit 'Update', :class => 'btn btn-primary', :id => 'update-button'
