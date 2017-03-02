@@ -159,6 +159,10 @@ ul li{
   text-align: center;
 }
 
+.list-unstyled {
+  padding-left: 40px;
+}
+
 .usetwentyfour{
   display: inline-block;
 }
@@ -188,9 +192,13 @@ td a {
 }
 
 h5 {
-  margin: 0px !important;
+  margin-left: 0px !important;
   padding: 0px !important;
+  margin-top: 20px;
   align: center;
+  color: $primary-color;
+  font-family: 'Josefin Slab';
+  font-size: 1.5em;
 }
 
 span.glyphicon-chevron-up {
@@ -202,17 +210,18 @@ span.glyphicon-chevron-down {
 }
 
 .start-time-picker {
-  // float: left;
-  // margin-left: 2em;
   align-items: center;
   display: inline-block;
 }
 
 .end-time-picker {
-  // float: right;
-  // margin-left: 2em;
+  margin-left: 2em;
   align-items: center;
   display: inline-block;
+}
+
+.to {
+  display: none;
 }
 
 #in-use {
@@ -245,5 +254,11 @@ span.glyphicon-chevron-down {
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px !important;
+  }
+  .to {
+    display: inline-block;
+    position: absolute;
+    margin-top: 9.5em;
+    font-weight: bold;
   }
 }
