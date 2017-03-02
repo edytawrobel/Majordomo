@@ -72,6 +72,14 @@ i.fa{
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+.calendar{
+    background-color: white;
+    padding: 2em;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-top: 2em;
+}
+
 .form-control {
   border: none;
   border-bottom: $secondary-color solid 1.5px;
