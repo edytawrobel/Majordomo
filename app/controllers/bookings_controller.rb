@@ -12,23 +12,14 @@ class BookingsController < ApplicationController
 
   def create
     @room = Room.find(params[:room_id])
-    @room.bookings.create(booking_params)
-    redirect_to room_path(@room)
-    # if no_overlapping_bookings
-    #   flash[:success] = 'Booked!'
-    #   redirect_to room_path(@room)
-    # else
-    #   flash[:alert] = "This booking overlaps others"
-    #   render 'new'
-    # end
-
-    # if @booking.save
-    #   flash[:success] = 'Booked!'
-    #   redirect_to bookings_path
-    # else
-    #   flash[:alert] = "This booking overlaps others"
-    #   render 'new'
-    # end
+    @booking = @room.bookings.new(booking_params)
+    if @booking.save
+      flash[:success] = 'Booked!'
+      redirect_to room_path(@room)
+    else
+      flash[:alert] = "This booking overlaps others"
+      redirect_to new_room_booking_path(@room)
+    end
   end
 
   def show
@@ -58,7 +49,7 @@ class BookingsController < ApplicationController
   end
 
   def status
-    @status = Booking.status?
+    @status = Booking.status?(params[:room_id])
   end
 
   private

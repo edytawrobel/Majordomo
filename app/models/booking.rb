@@ -3,20 +3,23 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true, allow_nil: false
   validates :end_time, presence: true, allow_nil: false
 
-  validate :no_overlapping_bookings
+  validates :start_time, :end_time, :overlap => {:scope => 'room_id'}
+
+  # validate :no_overlapping_bookings
 
   belongs_to :room
 
-  def no_overlapping_bookings
-    overlaps = Booking.where('start_time <= ? AND end_time >= ?', end_time, start_time)
-    return if overlaps.empty?
-    return if overlaps.count == 1 && overlaps.first.id == id
-    errors.add(:start_time, "This booking overlaps others")
-  end
+  # def no_overlapping_bookings
+  #   overlaps = Booking.where('start_time <= ? AND end_time >= ?', end_time, start_time)
+  #   return if overlaps.empty?
+  #   return if overlaps.count == 1 && overlaps.first.id == id
+  #   errors.add(:start_time, "This booking overlaps others")
+  # end
 
-  def self.status?
+  def self.status?(current_room_id)
     status = false
-    Booking.all.each do |booking|
+    current_room_bookings = Booking.where(room_id: current_room_id)
+    current_room_bookings.each do |booking|
       status = true if booking.start_time <= DateTime.now && DateTime.now <= booking.end_time
     end
     status
