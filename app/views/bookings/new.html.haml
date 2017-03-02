@@ -16,13 +16,15 @@
         .form-group
           = f.label :date
           #datetimepicker5.input-group.date
-            %input#date{:name => "date", :type => "text", :class => 'form-control', placeholder: 'Date (ddmmyyyy)'}/
+            %input#date{:name => "date", :type => "text", :class => 'form-control', placeholder: 'Date (dd-mm-yyyy)'}/
             %span.input-group-addon
               %span.glyphicon.glyphicon-calendar
         .form-group
           %div.start-time-picker
             %h5='Start time'
             #datetimepicker3
+          %div.to
+            %p= 'to'
           %div.end-time-picker
             %h5='End time'
             #datetimepicker4
