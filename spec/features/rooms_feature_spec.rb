@@ -57,4 +57,30 @@ feature 'Rooms' do
       expect(page).to have_content 'Living Room'
     end
   end
+
+  context 'editing a room' do
+    let!(:room){ Room.create(name: 'Living Room') }
+
+    scenario 'should update booking info' do
+      visit room_path(room)
+      click_link 'Edit'
+      fill_in 'Name', with: 'Meeting Room 1'
+      click_button 'Update'
+      expect(current_path).to eq rooms_path
+      expect(page).to have_content 'Room updated!'
+      expect(page).to have_content 'Meeting Room 1'
+    end
+  end
+
+  context 'deleting a room' do
+    let!(:room){ Room.create(name: 'Living Room') }
+
+    scenario 'should destroy that room' do
+      visit room_path(room)
+      click_link 'Delete'
+      expect(current_path).to eq rooms_path
+      expect(page).to have_content 'Room deleted!'
+      expect(page).not_to have_content 'Living Room'
+    end
+  end
 end

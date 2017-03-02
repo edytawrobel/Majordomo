@@ -24,6 +24,24 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+  def edit
+    @room = Room.find(params[:id])
+  end
+
+  def update
+    @room = Room.find(params[:id])
+    @room.update(room_params)
+    flash[:success] = 'Room updated!'
+    redirect_to rooms_path
+  end
+
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    flash[:success] = 'Room deleted!'
+    redirect_to rooms_path
+  end
+
   private
 
   def room_params

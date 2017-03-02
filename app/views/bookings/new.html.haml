@@ -5,7 +5,7 @@
     .col-md-12
       %h2#form-title= 'New Booking'
   .row
-    = form_for @booking do |f|
+    = form_for [@room, @booking] do |f|
       .col-md-12
         .form-group
           = f.label :name

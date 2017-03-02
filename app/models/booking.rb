@@ -5,6 +5,8 @@ class Booking < ApplicationRecord
 
   validate :no_overlapping_bookings
 
+  belongs_to :room
+
   def no_overlapping_bookings
     overlaps = Booking.where('start_time <= ? AND end_time >= ?', end_time, start_time)
     return if overlaps.empty?
