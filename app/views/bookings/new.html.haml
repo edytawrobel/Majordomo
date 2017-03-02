@@ -81,9 +81,7 @@
           $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
       });
       $('#datetimepicker3').on('dp.change', function() {
-        $('#booking_start_time').val(
-          $('#date').val() + ' ' + $('#datetimepicker3 .timepicker-hour').html() + ':' + $('#datetimepicker3 .timepicker-minute').html()
-          );
+        storeTime()
       });
 
       $('#datetimepicker5').click(function(){
@@ -92,8 +90,19 @@
         });
 
       $('#datetimepicker4').on('dp.change', function() {
+        storeTime()
+      });
+
+      $('#datetimepicker5').on('dp.change', function() {
+        storeTime()
+      });
+
+      function storeTime(){
         $('#booking_end_time').val(
           $('#date').val() + ' ' + $('#datetimepicker4 .timepicker-hour').html() + ':' + $('#datetimepicker4 .timepicker-minute').html()
           );
-      });
+        $('#booking_start_time').val(
+          $('#date').val() + ' ' + $('#datetimepicker3 .timepicker-hour').html() + ':' + $('#datetimepicker3 .timepicker-minute').html()
+          );
+      }
   });

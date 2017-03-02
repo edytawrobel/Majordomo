@@ -46,7 +46,7 @@
 :javascript
   $(function () {
       $('#datetimepicker5').datetimepicker({
-          format: 'YYYY-MM-DD'
+          format: 'DD-MM-YYYY'
       });
       $('#datetimepicker3').datetimepicker({
           format: 'HH:mm',
@@ -62,9 +62,11 @@
         $("#datetimepicker3").on("dp.change", function (e) {
             $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
         });
-        $("#datetimepicker4").on("dp.change", function (e) {
-            $('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
+        $("#datetimepicker3").on("dp.change", function (e) {
+          if($('#datetimepicker4').data("DateTimePicker").date() < e.date.add(5, 'minutes'))
+            $('#datetimepicker4').data("DateTimePicker").date(e.date.add(5, 'minutes'));
         });
+
       $('#datetimepicker6').datetimepicker({
           format: 'YYYY-MM-DD HH:mm'
       });
@@ -78,16 +80,29 @@
       $("#datetimepicker7").on("dp.change", function (e) {
           $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
       });
-
       $('#datetimepicker3').on('dp.change', function() {
-        $('#booking_start_time').val(
-          $('#date').val() + ' ' + $('#datetimepicker3 .timepicker-hour').html() + ':' + $('#datetimepicker3 .timepicker-minute').html()
-          );
+        storeTime()
       });
 
+      $('#datetimepicker5').click(function(){
+        $(this).datetimepicker('show')
+        console.log($('#datetimepicker5').data("DateTimePicker").date())
+        });
+
       $('#datetimepicker4').on('dp.change', function() {
+        storeTime()
+      });
+
+      $('#datetimepicker5').on('dp.change', function() {
+        storeTime()
+      });
+
+      function storeTime(){
         $('#booking_end_time').val(
           $('#date').val() + ' ' + $('#datetimepicker4 .timepicker-hour').html() + ':' + $('#datetimepicker4 .timepicker-minute').html()
           );
-      });
+        $('#booking_start_time').val(
+          $('#date').val() + ' ' + $('#datetimepicker3 .timepicker-hour').html() + ':' + $('#datetimepicker3 .timepicker-minute').html()
+          );
+      }
   });
