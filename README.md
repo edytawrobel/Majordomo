@@ -32,7 +32,7 @@ $ bin/rake db:create
 $ bin/rake db:migrate
 $ bin/rails s
 ```
-Then go to http://localhost:3000.
+Then go to http://localhost:3000 and enjoy.
 
 ## Progress
 
