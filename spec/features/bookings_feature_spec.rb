@@ -27,6 +27,7 @@ feature 'Bookings' do
       create_booking_two
       expect(current_path).to eq new_room_booking_path(room)
       expect(page).to have_content 'This booking overlaps others'
+      expect(page).not_to have_content 'Overlaps the workshop'
     end
 
     scenario 'but it is ok for them to overlap if they are in DIFFERENT rooms,' do
@@ -34,6 +35,13 @@ feature 'Bookings' do
       create_booking_three
       expect(current_path).to eq room_path(room_two)
       expect(page).to have_content 'Another workshop'
+    end
+
+    scenario 'and UNLESS IT ENDS BEFORE IT BEGINS,' do
+      create_booking_four
+      expect(current_path).to eq new_room_booking_path(room)
+      expect(page).to have_content 'This booking overlaps others or can\'t otherwise be created'
+      expect(page).not_to have_content 'It ends before it begins'
     end
 
     scenario 'and the form has the relevant field validations' do

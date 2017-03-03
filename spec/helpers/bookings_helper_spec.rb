@@ -45,6 +45,16 @@ def create_booking_three
   click_button 'Book'
 end
 
+def create_booking_four
+  visit room_path(room)
+  click_link 'Create booking'
+  fill_in 'Name', with: 'It ends before it begins'
+  fill_in 'Description', with: 'Unless you take care of it in the model'
+  fill_in 'booking_start_time', with: DateTime.now
+  fill_in 'booking_end_time', with: (DateTime.now - 5.minutes)
+  click_button 'Book'
+end
+
 def edit_booking_one
   click_link 'Edit'
   fill_in 'Name', with: 'Much tinier workshop'

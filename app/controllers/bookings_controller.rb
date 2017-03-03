@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
       flash[:success] = 'Booked!'
       redirect_to room_path(@room)
     else
-      flash[:alert] = "This booking overlaps others"
+      flash[:alert] = "This booking overlaps others or can't otherwise be created"
       redirect_to new_room_booking_path(@room)
     end
   end
@@ -35,9 +35,13 @@ class BookingsController < ApplicationController
   def update
     @room = Room.find(params[:room_id])
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    flash[:success] = 'Booking updated!'
-    redirect_to room_path(@room)
+    if @booking.update(booking_params)
+      flash[:success] = 'Booking updated!'
+      redirect_to room_path(@room)
+    else
+      flash[:alert] = "This booking overlaps others or can't otherwise be updated"
+      redirect_to edit_room_booking_path(@room, @booking)
+    end
   end
 
   def destroy
@@ -58,11 +62,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:name, :description, :start_time, :end_time, :room_id)
   end
-
-  # def no_overlapping_bookings
-  #   overlaps = @room.bookings.where('start_time <= ? AND end_time >= ?', end_time, start_time)
-  #   return if overlaps.empty?
-  #   return if overlaps.count == 1 && overlaps.first.id == id
-  #   errors.add(:start_time, "This booking overlaps others")
-  # end
 end
