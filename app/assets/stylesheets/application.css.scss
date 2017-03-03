@@ -285,6 +285,22 @@ margin-top: 10px;
   margin-bottom: 0px;
 }
 
+.alert-success {
+  background-color: white;
+  color: $primary-color;
+  border: $primary-color solid 1.5px;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.alert-warning {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px !important;
