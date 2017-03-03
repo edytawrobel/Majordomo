@@ -16,10 +16,11 @@ User stories are available [here](/kickoff/majordomo_user_stories.md).
 * bootstrap3-datetimepicker-rails (with momentjs-rails)
 * simple_calendar
 * validates_overlap
+* date_validator
 
-## How To Download and Run the App
+## How To Use the App
 
-Online at https://majordomo-makers.herokuapp.com.
+Go straight to https://majordomo-makers.herokuapp.com.
 
 Or on your own machine, open your terminal and:
 
@@ -31,7 +32,7 @@ $ bin/rake db:create
 $ bin/rake db:migrate
 $ bin/rails s
 ```
-Then visit http://localhost:3000 and enjoy.
+Then go to http://localhost:3000.
 
 ## Progress
 

@@ -11,6 +11,7 @@ gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'simple_calendar'
 gem 'validates_overlap'
+gem 'date_validator'
 gem 'coveralls', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
