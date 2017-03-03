@@ -1,8 +1,14 @@
-%h2= @booking.name
-%h4= @booking.description
-%h6= @booking.start_time.strftime('%e %B %Y, %H:%M')
-%h6= @booking.end_time.strftime('%e %B %Y, %H:%M')
-
-= link_to "Edit", edit_room_booking_path(@room, @booking)
-|
-= link_to 'Cancel', room_booking_path(@room, @booking), method: :delete
+.container
+  .row
+    .col-md-4.booking-detail.col-md-offset-4
+      %h2.title= @booking.name
+      = link_to "<i class='fa fa-pencil'></i>".html_safe , edit_room_booking_path(@room, @booking)
+      |
+      = link_to "<i class='fa fa-trash'></i>".html_safe, room_booking_path(@room, @booking), method: :delete
+      %h4= @booking.description
+      = @booking.start_time.strftime('%e %B %Y, %H:%M')
+      = ' - '
+      = @booking.end_time.strftime('%H:%M')
+      %br
+      %br
+      = link_to 'Back to all bookings', '/'

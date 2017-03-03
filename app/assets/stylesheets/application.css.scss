@@ -260,7 +260,25 @@ span.glyphicon-chevron-down {
 }
 
 #add-room {
-  margin: 12px;
+  margin: 30px;
+  background-color: #377BB5;
+}
+
+.booking-detail {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
+
+.title {
+color: $primary-color;
+align: left;
+font-family: 'Josefin Slab';
+font-size: 3em;
+margin-top: 10px;
 }
 
 @media (min-width: 768px) {
