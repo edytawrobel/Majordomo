@@ -74,7 +74,10 @@ i.fa{
 
 .room-calendar{
     background-color: white;
-    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
     border-radius: 6px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin-top: 2em;
@@ -143,18 +146,6 @@ span.input-group-addon:active{
  width: 20%;
 }
 
-// #time-container{
-//   .ui-datepicker {
-//     width: 50%;
-//     padding: 0;
-//   }
-//   .ui-widget {
-//     font-size: 0.9em;
-//   }
-//   .ui-datepicker table {
-//     font-size: 0.7em;
-//   }
-// }
 ul li{
   text-align: center;
 }
@@ -264,6 +255,11 @@ span.glyphicon-chevron-down {
   background-color: #377BB5;
 }
 
+#add-button {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
 .booking-detail {
   background-color: white;
   padding: 0.5em;
@@ -279,6 +275,14 @@ align: left;
 font-family: 'Josefin Slab';
 font-size: 3em;
 margin-top: 10px;
+}
+
+.simple-calendar {
+  margin-top: 15px;
+}
+
+.room-title {
+  margin-bottom: 0px;
 }
 
 @media (min-width: 768px) {

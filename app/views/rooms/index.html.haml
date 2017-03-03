@@ -4,7 +4,7 @@
       - if @rooms.any?
         - @rooms.each do |room|
           %div.room-calendar
-            %h2= link_to room.name, room_path(room)
+            %h2.room-title= link_to room.name, room_path(room)
             %a{:href => new_room_booking_path(room) }
               %button.btn.btn-primary
                 Create booking
