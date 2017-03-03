@@ -2,9 +2,9 @@
   .row
     .col-md-4.booking-detail.col-md-offset-4
       %h2.title= @booking.name
-      = link_to "<i class='fa fa-pencil'></i>".html_safe , edit_room_booking_path(@room, @booking)
+      = link_to "<i class='fa fa-pencil'> Edit</i>".html_safe , edit_room_booking_path(@room, @booking)
       |
-      = link_to "<i class='fa fa-trash'></i>".html_safe, room_booking_path(@room, @booking), method: :delete
+      = link_to "<i class='fa fa-trash'> Cancel</i>".html_safe, room_booking_path(@room, @booking), method: :delete
       %h4= @booking.description
       = @booking.start_time.strftime('%e %B %Y, %H:%M')
       = ' - '

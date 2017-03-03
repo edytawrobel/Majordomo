@@ -20,6 +20,15 @@
  $primary-color: #ff5500;
  $secondary-color: #E8E8E8;
 
+ a {
+   color: #669492;
+ }
+
+ i {
+   font-family: 'Raleway';
+   font-weight: lighter;
+ }
+
  .navbar {
   background: white;
   border-radius: none !important;
@@ -193,11 +202,11 @@ h5 {
 }
 
 span.glyphicon-chevron-up {
-  color:$primary-color;
+  color:#669492;
 }
 
 span.glyphicon-chevron-down {
-  color:$primary-color;
+  color:#669492;
 }
 
 .start-time-picker {
@@ -252,7 +261,7 @@ span.glyphicon-chevron-down {
 
 #add-room {
   margin: 30px;
-  background-color: #377BB5;
+  background-color: #669492;
 }
 
 #add-button {

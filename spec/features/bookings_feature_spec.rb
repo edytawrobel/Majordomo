@@ -60,9 +60,9 @@ feature 'Bookings' do
       expect(page).to have_content 'Workshop'
       expect(page).to have_content 'it is hard not to fall asleep'
       expect(page).to have_content DateTime.now.strftime('%e %B %Y, %H:%M')
-      expect(page).to have_content (DateTime.now + 5.minutes).strftime('%e %B %Y, %H:%M')
-      expect(page).to have_link 'Edit'
-      expect(page).to have_link 'Cancel'
+      expect(page).to have_content (DateTime.now + 5.minutes).strftime('%H:%M')
+      expect(page).to have_css 'i.fa.fa-pencil'
+      expect(page).to have_css 'i.fa.fa-trash'
     end
   end
 

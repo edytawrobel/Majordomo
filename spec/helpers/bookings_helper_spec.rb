@@ -56,6 +56,8 @@ def create_booking_four
 end
 
 def edit_booking_one
+  # find(:css, 'i.fa.fa-pencil').click
+  # save_and_open_page
   click_link 'Edit'
   fill_in 'Name', with: 'Much tinier workshop'
   fill_in 'Description', with: 'so no sleeping'

@@ -2,9 +2,9 @@
   .row
     .col-md-12
       %h2.title= @room.name
-      = link_to "<i class='fa fa-pencil'></i>".html_safe, edit_room_path
+      = link_to "<i class='fa fa-pencil'> Edit</i>".html_safe, edit_room_path
       |
-      = link_to "<i class='fa fa-trash'></i>".html_safe, room_path, method: :delete
+      = link_to "<i class='fa fa-trash'> Delete</i>".html_safe, room_path, method: :delete
       %br
       %a{:href => new_room_booking_path(@room) }
         %button.btn.btn-primary

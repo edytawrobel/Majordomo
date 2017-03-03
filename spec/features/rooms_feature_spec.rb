@@ -37,8 +37,8 @@ feature 'Rooms' do
       click_link 'Living Room'
       expect(current_path).to eq room_path(room)
       expect(page).to have_content 'Living Room'
-      expect(page).to have_link 'Edit'
-      expect(page).to have_link 'Delete'
+      expect(page).to have_css 'i.fa.fa-pencil'
+      expect(page).to have_css 'i.fa.fa-trash'
     end
   end
 
