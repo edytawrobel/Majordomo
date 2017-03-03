@@ -3,13 +3,27 @@
     .col-md-12
       - if @rooms.any?
         - @rooms.each do |room|
-          %h2= link_to room.name, room_path(room)
+          %div.room-calendar
+            %h2.room-title= link_to room.name, room_path(room)
+            %a{:href => new_room_booking_path(room) }
+              %button.btn.btn-primary
+                Create booking
+                %i.fa.fa-calendar{"aria-hidden" => "true"}
+            = week_calendar events: room.bookings do |date, bookings|
+              = date
+              - bookings.each do |booking|
+                %div
+                  = link_to booking.name, room_booking_path(room, booking)
+                  %br
+                  = booking.start_time.strftime('%H:%M')
+                  = ' - '
+                  = booking.end_time.strftime('%H:%M')
       - else
         %h1 No rooms yet
 .container
   .row
     .col-md-12
       %a{:href => new_room_path }
-        %button.btn.btn-primary
+        %button.btn.btn-primary#add-room
           Add room
-          %i.fa.fa-calendar{"aria-hidden" => "true"}
+          %i.fa.fa-plus-circle{"aria-hidden" => "true"}

@@ -48,25 +48,32 @@
 :javascript
   $(function () {
       $('#datetimepicker5').datetimepicker({
-          format: 'DD-MM-YYYY'
+          format: 'DD-MM-YYYY',
+          minDate: moment()
       });
       $('#datetimepicker3').datetimepicker({
           format: 'HH:mm',
           inline: true,
+          useCurrent: true,
+          minDate: moment(),
           stepping: 5
       });
+      var d = new Date();
+
       $('#datetimepicker4').datetimepicker({
           format: 'HH:mm',
           inline: true,
-          useCurrent: false,
+          minDate: moment().add(10, 'minutes'),
           stepping: 5
       });
         $("#datetimepicker3").on("dp.change", function (e) {
             $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
         });
+
         $("#datetimepicker3").on("dp.change", function (e) {
-          if($('#datetimepicker4').data("DateTimePicker").date() < e.date.add(5, 'minutes'))
+          if($('#datetimepicker4').data("DateTimePicker").date() <= e.date){
             $('#datetimepicker4').data("DateTimePicker").date(e.date.add(5, 'minutes'));
+          }
         });
 
       $('#datetimepicker6').datetimepicker({
@@ -86,10 +93,11 @@
         storeTime()
       });
 
-      $('#datetimepicker5').click(function(){
-        $(this).datetimepicker('show')
-        console.log($('#datetimepicker5').data("DateTimePicker").date())
-        });
+
+
+      $('#date').focus(function(){
+        $('#datetimepicker5').datetimepicker('show');
+      });
 
       $('#datetimepicker4').on('dp.change', function() {
         storeTime()

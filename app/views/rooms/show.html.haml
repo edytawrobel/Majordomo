@@ -1,21 +1,16 @@
-%h2= @room.name
-= link_to 'Edit', edit_room_path
-|
-= link_to 'Delete', room_path, method: :delete
-
-.container
+.container.room-calendar
   .row
     .col-md-12
+      %h2.title= @room.name
+      = link_to "<i class='fa fa-pencil'></i>".html_safe, edit_room_path
+      |
+      = link_to "<i class='fa fa-trash'></i>".html_safe, room_path, method: :delete
+      %br
       %a{:href => new_room_booking_path(@room) }
         %button.btn.btn-primary
           Create booking
           %i.fa.fa-calendar{"aria-hidden" => "true"}
-
-- if @room.bookings.any?
-  .container.calendar
-    .row
-      .col-md-12
-        %h2#calendar-title= 'This room\'s bookings'
+      - if @room.bookings.any?
         = week_calendar events: @room.bookings do |date, bookings|
           = date
           - bookings.each do |booking|
@@ -25,5 +20,5 @@
               = booking.start_time.strftime('%H:%M')
               = ' - '
               = booking.end_time.strftime('%H:%M')
-- else
-  No bookings yet!
+      - else
+        No bookings yet!
