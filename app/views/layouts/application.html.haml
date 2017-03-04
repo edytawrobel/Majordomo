@@ -17,3 +17,21 @@
         = content_tag :div, msg, class: [:alert, alert_for(name)]
       = yield
     %script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+
+
+
+%footer
+  .container
+    .row.vcenter
+      .pull-left.col-xs-6
+        %p Copyright ©2017 by Edyta Wrobel, Sho Marovatsanga, Stefan Liute, Mica Whiby
+      .col-xs-6
+        .pull-right
+          %a{:href => "#"}
+            %i.fa.fa-linkedin-square.fa-icon
+          %a{:href => "#"}
+            %i.fa.fa-twitter-square.fa-icon
+          %a{:href => "#"}
+            %i.fa.fa-facebook-square.fa-icon
+          %a{:href => "https://github.com/edytawrobel/majordomo"}
+            %i.fa.fa-github-square.fa-icon

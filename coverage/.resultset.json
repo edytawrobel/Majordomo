@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stefanliute/Projects/majordomo/spec/controllers/bookings_controller_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/controllers/bookings_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/rails_helper.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -68,14 +68,14 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/environment.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/stefanliute/Projects/majordomo/config/application.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/application.rb": [
         1,
         null,
         1,
@@ -102,12 +102,12 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/boot.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/stefanliute/Projects/majordomo/config/environments/test.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/environments/test.rb": [
         1,
         null,
         null,
@@ -151,7 +151,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/application_controller_renderer.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -159,7 +159,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/assets.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -172,7 +172,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/backtrace_silencers.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -181,20 +181,20 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/cookies_serializer.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/inflections.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -212,13 +212,13 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/mime_types.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/new_framework_defaults.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/new_framework_defaults.rb": [
         null,
         null,
         null,
@@ -244,12 +244,12 @@
         null,
         1
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/session_store.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/stefanliute/Projects/majordomo/config/initializers/wrap_parameters.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -265,7 +265,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/factories/bookings.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/factories/bookings.rb": [
         1,
         1,
         1,
@@ -275,14 +275,14 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/factories/rooms.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/factories/rooms.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/config/routes.rb": [
+      "/Users/edytawrobel/Repos/majordomo/config/routes.rb": [
         1,
         null,
         1,
@@ -295,7 +295,7 @@
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/helpers/application_helper.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/helpers/application_helper.rb": [
         1,
         1,
         null,
@@ -307,15 +307,15 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/helpers/bookings_helper.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/helpers/bookings_helper.rb": [
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/helpers/rooms_helper.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/helpers/rooms_helper.rb": [
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/controllers/bookings_controller.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/controllers/bookings_controller.rb": [
         1,
         null,
         1,
@@ -382,19 +382,19 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/controllers/application_controller.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/controllers/rooms_controller_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/controllers/rooms_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/controllers/rooms_controller.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/controllers/rooms_controller.rb": [
         1,
         null,
         1,
@@ -446,7 +446,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/features/bookings_feature_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/features/bookings_feature_spec.rb": [
         1,
         null,
         1,
@@ -546,7 +546,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/features/rooms_feature_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/features/rooms_feature_spec.rb": [
         1,
         null,
         1,
@@ -618,7 +618,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/features/view_status_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/features/view_status_spec.rb": [
         1,
         null,
         1,
@@ -654,7 +654,7 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/helpers/bookings_helper_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/helpers/bookings_helper_spec.rb": [
         1,
         null,
         null,
@@ -723,7 +723,7 @@
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/helpers/rooms_helper_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/helpers/rooms_helper_spec.rb": [
         1,
         null,
         null,
@@ -747,14 +747,14 @@
         3,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/models/booking_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/models/booking_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/models/booking.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/models/booking.rb": [
         1,
         1,
         1,
@@ -775,19 +775,19 @@
         null,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/models/application_record.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/spec/models/room_spec.rb": [
+      "/Users/edytawrobel/Repos/majordomo/spec/models/room_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/stefanliute/Projects/majordomo/app/models/room.rb": [
+      "/Users/edytawrobel/Repos/majordomo/app/models/room.rb": [
         1,
         1,
         null,
@@ -795,6 +795,6 @@
         null
       ]
     },
-    "timestamp": 1488555581
+    "timestamp": 1488626303
   }
 }
